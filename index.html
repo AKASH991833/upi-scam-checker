@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>UPI Scam Checker - is this message safe?</title>
+<meta name="description" content="Paste an SMS, WhatsApp message or link and see if it looks like a UPI scam. Free, private, works in your browser. Awareness tool.">
+<meta name="theme-color" content="#e5484d">
+<meta property="og:title" content="UPI Scam Checker">
+<meta property="og:description" content="Got a strange payment, KYC or refund message? Paste it here and check the scam signs in seconds.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<script src="theme.js"></script>
+</head>
+<body>
+<header class="top">
+  <div class="brand"><img src="icon.svg" alt="" width="34" height="34"><div><b>Scam Checker</b><span>for UPI &amp; payments</span></div></div>
+  <button id="themeBtn" class="icon-btn" type="button" aria-label="Switch dark or light mode" title="Dark / Light"><span aria-hidden="true">&#9680;</span></button>
+</header>
+<main class="wrap stack">
+  <section class="hero">
+    <h1>Got a strange message? <em>Check it first.</em></h1>
+    <p>Paste the SMS, WhatsApp text or link. We show the scam signs we find and what to do. Nothing leaves your phone.</p>
+  </section>
+
+  <section class="card">
+    <label for="msg" style="margin-top:0">Message or link</label>
+    <textarea id="msg" maxlength="5000" placeholder="Paste here. Example: Your account will be blocked today. Update KYC: http://sbi-kyc.xyz"></textarea>
+    <div class="chips" aria-label="Try an example">
+      <span style="font-size:13px;color:var(--muted);align-self:center">Try:</span>
+      <button class="chip" type="button" data-ex="0">Fake KYC</button>
+      <button class="chip" type="button" data-ex="1">Refund trick</button>
+      <button class="chip" type="button" data-ex="2">Prize / lottery</button>
+      <button class="chip" type="button" data-ex="3">Normal bank SMS</button>
+    </div>
+    <div class="row">
+      <button id="go" class="btn primary" type="button">Check now</button>
+      <button id="clear" class="btn" type="button">Clear</button>
+    </div>
+
+    <div id="res" class="res" aria-live="polite">
+      <div id="meter" class="meter lvl-low">
+        <div class="ring" id="ring"><b id="score">0</b></div>
+        <div><h3 id="verdict"></h3><p id="sub"></p></div>
+      </div>
+      <ul id="reasons" class="reasons"></ul>
+      <div id="todo" class="todo"></div>
+      <p class="lim"><b>Please note:</b> this is a simple checker for awareness. It looks for known scam patterns. A low score does <u>not</u> mean a message is safe, and a high score is a warning, not proof. When in doubt, do not pay, do not click, and call your bank using the number on your card.</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>5 rules that stop most UPI frauds</h2>
+    <div class="tips">
+      <div class="tip"><b>PIN is only to SEND money</b><span>You never enter your UPI PIN to receive money.</span></div>
+      <div class="tip"><b>Never share OTP</b><span>Not with the bank, not with "customer care", not with anyone.</span></div>
+      <div class="tip"><b>"Approve request" = money goes out</b><span>Do not approve collect requests from strangers.</span></div>
+      <div class="tip"><b>Do not install apps from links</b><span>AnyDesk, TeamViewer or APK files give scammers control.</span></div>
+      <div class="tip"><b>Lost money? Act fast</b><span>Call <b style="display:inline">1930</b> (National Cyber Crime Helpline) and report at cybercrime.gov.in. Also tell your bank.</span></div>
+    </div>
+  </section>
+  <footer><p>Free. No sign-up. Nothing is uploaded or saved. Source on <a href="https://github.com/AKASH991833/upi-scam-checker" rel="noopener">GitHub</a>.</p></footer>
+</main>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
